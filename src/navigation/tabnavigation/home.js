@@ -1,24 +1,15 @@
-import React from 'react'
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import HomeScreen from '../../screens/tabnavigation/home'
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "../../screens/tabnavigation/home";
 
+const Stack = createNativeStackNavigator();
 
-const Stack = createNativeStackNavigator()
+const Home = ({ navigation }) => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+};
 
-const Home = ({navigation}) => {
-    return (
-        <Stack.Navigator>
-          
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-    )
-}
-
-export default Home
-
-
+export default Home;
