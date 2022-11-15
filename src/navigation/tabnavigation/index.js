@@ -7,7 +7,8 @@ const AppNavigator = () => {
 
   return (
     <NavigationContainer>
-      {isAuthenticated ? <TabNavigator /> : <AuthNavigator />}
+      {/* {isAuthenticated ? <TabNavigator /> : <AuthNavigator />} */}
+        <AuthNavigator />
     </NavigationContainer>
   );
 };

@@ -2,11 +2,10 @@ import { StyleSheet, Text, View } from "react-native";
 import AppNavigator from "./src/navigation/tabnavigation";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <AppNavigator />
-    </View>
-  );
+
+
+  return <AppNavigator />;
+
 }
 
 const styles = StyleSheet.create({

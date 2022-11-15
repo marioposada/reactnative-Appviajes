@@ -8,9 +8,15 @@ export const styles =  StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    logo: {
-        width: 100,
-        height: 100,
+    text: {
+        color: colors.black,
+        fontSize: 16,
+
+    },
+    title: {
+        color: colors.black,
+        fontSize: 24,
+        fontWeight: "bold",
         marginBottom: 20,
-    }
+    },
 });
