@@ -4,7 +4,7 @@ import { colors } from "../../../constants/theme/index";
 export const  styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.background,
         alignItems: "center",
         justifyContent: "center",
     },
@@ -26,7 +26,10 @@ export const  styles = StyleSheet.create({
     input: {
         height: 45,
         borderWidth: 1,
+        borderColor: colors.grey_line,
         padding: 10,
+        borderRadius: 5,
+        backgroundColor: colors.white,
     },
     campo: {
         alignContent: "flex-start",
@@ -38,7 +41,7 @@ export const  styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: "bold",
         textDecorationLine: 'underline',
-        textAlign: "left",
+        textAlign: "right",
         marginBottom: 10,
     },
     buttom: {
@@ -48,9 +51,19 @@ export const  styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
+        borderRadius: 5,
     },
     buttomTitle: {
         color: 'white',
+        fontWeight: 'bold',
+        fontSize: 15,
+    },
+    authentication: {
+        flexDirection: 'row',
+        width: 300,
+        padding: 10,
+        justifyContent: 'space-evenly',
+        marginVertical: 10,
     }
 });
 

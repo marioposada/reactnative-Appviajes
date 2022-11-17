@@ -4,6 +4,9 @@ import { View, Text, Image, TouchableOpacity, Input, TextInput } from 'react-nat
 import { colors } from '../../../constants/theme/index';
 import Logo from '../../../../assets/Logo.png'
 import Line from '../../../../assets/Line.png'
+//LOGOS DE INICIO DE SESIÓN
+import Facebook from '../../../../assets/Facebook.png'
+import Google from '../../../../assets/Google.png'
 
 const LogIn1 = ({ navigation }) => {
 
@@ -30,14 +33,24 @@ const LogIn1 = ({ navigation }) => {
                     placeholder="Enter your password"
                 />
             </View>
-            <Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text>
+            <View style={{width: 280}}><Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text></View>
             <TouchableOpacity style={styles.buttom}>
                 <Text style={styles.buttomTitle}>Continuar</Text>
             </TouchableOpacity>
             <View>
-                {/* <Image source={Line} /> */}
+                <Text> <Image source={Line} />  O iniciar con  <Image source={Line} /></Text>
             </View>
-            <Text style={styles.text} onPress={() => navigation.navigate('SignUp1')}>Don't have an account? Sign Up</Text>
+            <View style={styles.authentication}>
+                <View>
+                    <Image style={{marginBottom: 10}} source={Facebook} />
+                    <Text>Facebook</Text>
+                </View>
+                <View>
+                    <Image style={{marginBottom: 10}} source={Google} />
+                    <Text>Google</Text>
+                </View>
+            </View>
+            <Text>¿Aún no te registraste?.Haz click <Text style={{fontWeight: 'bold'}} onPress={() => navigation.navigate('SignUp1')}>aquí</Text></Text>
         </View>
     );
 }
