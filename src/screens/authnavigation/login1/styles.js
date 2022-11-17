@@ -17,8 +17,41 @@ export const  styles = StyleSheet.create({
         color: colors.black,
         fontSize: 24,
         fontWeight: "bold",
+        marginTop: 20,
+        marginBottom: 15,
+    },
+    subtitle: {
+        fontSize: 18,
+    },
+    input: {
+        height: 45,
+        borderWidth: 1,
+        padding: 10,
+    },
+    campo: {
+        alignContent: "flex-start",
+        // borderWidth: 1,
+        width: 280,
         marginBottom: 20,
     },
+    unknownPassword: {
+        fontSize: 10,
+        fontWeight: "bold",
+        textDecorationLine: 'underline',
+        textAlign: "left",
+        marginBottom: 10,
+    },
+    buttom: {
+        width: 300,
+        backgroundColor: colors.black,
+        height: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    buttomTitle: {
+        color: 'white',
+    }
 });
 
 
