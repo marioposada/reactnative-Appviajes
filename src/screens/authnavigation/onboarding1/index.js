@@ -7,8 +7,8 @@ const OnBoarding1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <Image source={Logo} />
-        <Text style={styles.title}>Suti</Text>
-      <Text style={styles.text} onPress={()=> navigation.navigate('LogIn1')} > Acceder a suti </Text>
+        <Text style={styles.title} onPress={()=> navigation.navigate('LogIn1')}>Suti</Text>
+      <Text style={styles.text} onPress={()=> navigation.navigate('LogIn1')} > Acceder a <Text style={{fontWeight: 'bold'}}>SUTI</Text> </Text>
     </View>
   );
 };

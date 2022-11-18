@@ -11,7 +11,6 @@ export const  styles = StyleSheet.create({
     text: {
         color: colors.black,
         fontSize: 16,
-
     },
     title: {
         color: colors.black,
@@ -22,6 +21,7 @@ export const  styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 18,
+        marginBottom: 8,
     },
     input: {
         height: 45,
