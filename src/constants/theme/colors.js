@@ -21,5 +21,6 @@ export const colors = {
     dark: '#130f40',
     transparent: 'transparent',
     red: '#FF0000',
+    primary_mayor: '#ED7661',
 };
 

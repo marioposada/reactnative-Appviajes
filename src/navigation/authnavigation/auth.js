@@ -11,7 +11,7 @@ const AuthNavigation = ({navigation}) => {
       screenOptions={{
         headerShown: false,
       }}
-    >
+      >
       <Stack.Screen name="OnBoarding1" component={OnBoarding1} />
       <Stack.Screen name="LogIn1" component={LogIn1} />
       <Stack.Screen name="SignUp1" component={SignUp1} />
