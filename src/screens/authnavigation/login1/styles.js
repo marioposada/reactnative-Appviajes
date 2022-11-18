@@ -46,7 +46,7 @@ export const  styles = StyleSheet.create({
     },
     buttom: {
         width: 300,
-        backgroundColor: colors.black,
+        backgroundColor: colors.primary_mayor,
         height: 45,
         justifyContent: 'center',
         alignItems: 'center',
