@@ -35,7 +35,7 @@ const TabNavigator = () => {
                 name="Transport"
                 component={TransportNavigator}
                 options={{
-                    title: "Home",
+                    title: "Transport",
                     tabBarIcon: ({ focused }) => (
                       <Image
                         source={require("../../../assets/iconotransporte.png")}
@@ -49,7 +49,7 @@ const TabNavigator = () => {
                 name="Alerts"
                 component={AlertsNavigator}
                 options={{
-                    title: "Home",
+                    title: "Alerts",
                     tabBarIcon: ({ focused }) => (
                       <Image
                         source={require("../../../assets/iconoalertas.png")}
