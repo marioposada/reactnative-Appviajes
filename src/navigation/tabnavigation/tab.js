@@ -12,6 +12,10 @@ const TabNavigator = () => {
     return (
         <BottomTab.Navigator
         initialRouteName="HomeTab"
+        screenOptions={{
+          headerShown: false,
+          
+        }}
         >
             <BottomTab.Screen
                 name="HomeTab"
@@ -33,8 +37,8 @@ const TabNavigator = () => {
                 options={{
                     title: "Home",
                     tabBarIcon: ({ focused }) => (
-                      <Ionicons
-                        name={focused ? "home" : "home-outline"}
+                      <Image
+                        source={require("../../../assets/iconotransporte.png")}
                         size={24}
                         color={focused ? colors.primary : colors.grey}
                       />
@@ -47,8 +51,8 @@ const TabNavigator = () => {
                 options={{
                     title: "Home",
                     tabBarIcon: ({ focused }) => (
-                      <Ionicons
-                        name={focused ? "home" : "home-outline"}
+                      <Image
+                        source={require("../../../assets/iconoalertas.png")}
                         size={24}
                         color={focused ? colors.primary : colors.grey}
                       />
