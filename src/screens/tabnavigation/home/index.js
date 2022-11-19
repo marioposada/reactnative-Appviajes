@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import {styles} from './styles'
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text>Home Screen</Text>

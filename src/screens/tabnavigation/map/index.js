@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import {styles} from './styles'
 
 
-const MapScreen = () => {
+const MapScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text>Map Screen</Text>
