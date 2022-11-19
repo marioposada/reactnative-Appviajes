@@ -6,7 +6,7 @@ import TabNavigator from "../tabnavigation/tab";
 
 
 const AppNavigator = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <NavigationContainer>
