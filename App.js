@@ -1,11 +1,18 @@
 import { StyleSheet, Text, View } from "react-native";
 import AppNavigator from "./src/navigation/tabnavigation";
 
+import { Provider } from "react-redux";
+// import store from "./src/redux/store";
+import configureStore from "./src/redux/store";
+
+
 export default function App() {
 
-
-  return <AppNavigator />;
-
+  return (
+    <Provider store = { configureStore }> 
+      <AppNavigator /> 
+    </Provider>
+  )
 }
 
 const styles = StyleSheet.create({

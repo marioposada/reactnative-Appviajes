@@ -3,16 +3,19 @@ import React, { useState } from "react";
 import AuthNavigator from "../authnavigation/auth";
 import TabNavigator from "../tabnavigation/tab";
 
-
-
+import { useSelector } from "react-redux";
 const AppNavigator = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  const estado = useSelector(state => state.stateGlobal);
+   console.log("aqui--->",estado);
+
+  let isAuthenticated = estado;
 
   return (
+   
     <NavigationContainer>
-      {isAuthenticated ? <TabNavigator /> : <AuthNavigator />}
-       
-       
+      {!isAuthenticated && <AuthNavigator />}
+      {isAuthenticated && <TabNavigator />}
     </NavigationContainer>
   );
 };
