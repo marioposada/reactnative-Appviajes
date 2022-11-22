@@ -22,5 +22,7 @@ export const colors = {
     transparent: 'transparent',
     red: '#FF0000',
     primary_mayor: '#ED7661',
+    secondary_mayor: '#F5BBB1',
+    transparent: '#4F4F4F',
 };
 
