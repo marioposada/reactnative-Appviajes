@@ -6,10 +6,10 @@ import TabNavigator from "../tabnavigation/tab";
 import { useSelector } from "react-redux";
 const AppNavigator = () => {
 
-  const estado = useSelector(state => state.stateGlobal);
-   console.log("aqui--->",estado);
+  const isAuthenticated = useSelector(state => state.stateGlobal);
+  //  console.log("aqui--->",estado);
 
-  let isAuthenticated = estado;
+  // let isAuthenticated = estado;
 
   return (
    
