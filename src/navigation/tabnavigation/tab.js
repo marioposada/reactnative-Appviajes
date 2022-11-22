@@ -8,7 +8,7 @@ import AlertsNavigator from './alerts'
 
 const BottomTab = createBottomTabNavigator()
 
-const TabNavigator = () => {
+const   TabNavigator = () => {
     return (
         <BottomTab.Navigator
         initialRouteName="HomeTab"
