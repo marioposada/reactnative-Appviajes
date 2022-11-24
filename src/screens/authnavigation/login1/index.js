@@ -8,8 +8,18 @@ import Line from '../../../../assets/Line.png'
 import Facebook from '../../../../assets/Facebook.png'
 import Google from '../../../../assets/Google.png'
 
-const LogIn1 = ({ navigation }) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { LognIn } from '../../../redux/actions/action';
 
+const LogIn1 = ({ navigation }) => {
+    const dispatch = useDispatch();
+    const estado = useSelector(state => state.stateGlobal);
+    function name() {
+        console.log("el estado global es-->", estado);
+         dispatch({type: "OBTENER_ACCESO"});
+        console.log("el estado global2 ahora es-->", estado);
+
+    }
     return (
         <ScrollView style={{marginTop: 70}}>
             <KeyboardAvoidingView style={styles.container} > 
@@ -35,8 +45,8 @@ const LogIn1 = ({ navigation }) => {
                     />
                 </View>
                 <View style={{width: 280}}><Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text></View>
-                <TouchableOpacity style={styles.buttom}>
-                    <Text style={styles.buttomTitle}>Continuar</Text>
+                <TouchableOpacity style={styles.buttom}  onPress={( ) => name()}>
+                    <Text style={styles.buttomTitle} >Continuar</Text>
                 </TouchableOpacity>
                 <View>
                     <Text> <Image source={Line} />  O iniciar con  <Image source={Line} /></Text>
