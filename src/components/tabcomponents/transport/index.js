@@ -17,7 +17,7 @@ const Transport = ({ navigation, text }) => {
         <Text style={styles.text1}>{text}</Text>
       </View>
       <View style={styles.content2}>
-        <Image source={require("../../../../assets/location.png")} />
+        <Image source={require("../../../../assets/time.png")} />
         <Text style={styles.text1}>{text}</Text>
       </View>
       <View style={styles.content2}>

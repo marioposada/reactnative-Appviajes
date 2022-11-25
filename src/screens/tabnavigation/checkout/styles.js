@@ -3,7 +3,6 @@ import { colors } from "../../../constants/theme";
 
 export const styles = StyleSheet.create({
   container: {
-  
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
@@ -13,12 +12,12 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
-    marginVertical: 20,
+    marginVertical: 30,
   },
 
   image: {
-    width: '100%',
-    height: 243,
-    resizeMode: "contain",
+    width: "100%",
+    height: 250,
+   
   },
 });
