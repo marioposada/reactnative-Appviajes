@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { styles } from './styles';
 import { View, Text, Image, TouchableOpacity, Input, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { colors } from '../../../constants/theme/index';
@@ -9,17 +9,41 @@ import Facebook from '../../../../assets/Facebook.png'
 import Google from '../../../../assets/Google.png'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { LognIn } from '../../../redux/actions/action';
+import { LognIn, SignIn } from '../../../redux/actions/action';
+
+//firebase
+import { auth } from '../../../utils/firebase-config';
 
 const LogIn1 = ({ navigation }) => {
+
     const dispatch = useDispatch();
     const estado = useSelector(state => state.stateGlobal);
-    function name() {
-        console.log("el estado global es-->", estado);
-         dispatch({type: "OBTENER_ACCESO"});
-        console.log("el estado global2 ahora es-->", estado);
+    const [email, setEmail] = useState(" ");
+    const [password, setPassword] = useState(" ");
 
+    // function name() {
+    //     console.log("el estado global es-->", estado);
+    //      dispatch({type: "OBTENER_ACCESO"});
+    //     console.log("el estado global2 ahora es-->", estado);
+    // }
+    const handleSignIn = () => {
+        auth
+        .signInWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Logged in with: ', user.email);
+            dispatch({type: "OBTENER_ACCESO", payload: true});
+        })
+        .catch(error => {alert(error.message), dispatch({type: "OBTENER_ACCESO", payload: false})})
     }
+    // const handleSignIn = () => {
+    //     auth
+    //     .createUserWithEmailAndPassword(email, password)
+    //     .then(userCredentials => {
+    //         const user = userCredentials.user;
+    //         console.log(user.email);
+    //     }).catch(error => alert(error.message));
+    // }
     return (
         <ScrollView style={{marginTop: 70}}>
             <KeyboardAvoidingView style={styles.container} > 
@@ -35,6 +59,7 @@ const LogIn1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="ejemplo@gmail.com"
+                        onChangeText={(text) => setEmail(text)}
                     />
                 </View>
                 <View style={styles.campo}>
@@ -42,10 +67,11 @@ const LogIn1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="Enter your password"
+                        onChangeText={(text) => setPassword(text)}
                     />
                 </View>
                 <View style={{width: 280}}><Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text></View>
-                <TouchableOpacity style={styles.buttom}  onPress={( ) => name()}>
+                <TouchableOpacity style={styles.buttom}  onPress={handleSignIn}>
                     <Text style={styles.buttomTitle} >Continuar</Text>
                 </TouchableOpacity>
                 <View>

@@ -9,7 +9,7 @@ const rootReducer = (state = initialState, action) => {
         case OBTENER_ACCESO :
             return {
                 ...state,
-                stateGlobal: true,
+                stateGlobal: action.payload,
             }
         case SIGN_OUT:
             return {
