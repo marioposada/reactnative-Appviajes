@@ -21,11 +21,11 @@ const LogIn1 = ({ navigation }) => {
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
 
-    // function name() {
-    //     console.log("el estado global es-->", estado);
-    //      dispatch({type: "OBTENER_ACCESO"});
-    //     console.log("el estado global2 ahora es-->", estado);
-    // }
+    function name() {
+         console.log("el estado global es-->", estado);
+          dispatch({type: "OBTENER_ACCESO", payload: true});
+         console.log("el estado global2 ahora es-->", estado);
+    }
     const handleSignIn = () => {
         auth
         .signInWithEmailAndPassword(email, password)
@@ -71,7 +71,8 @@ const LogIn1 = ({ navigation }) => {
                     />
                 </View>
                 <View style={{width: 280}}><Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text></View>
-                <TouchableOpacity style={styles.buttom}  onPress={handleSignIn}>
+                {/* <TouchableOpacity style={styles.buttom}  onPress={handleSignIn}> */}
+                <TouchableOpacity style={styles.buttom}  onPress={name}>
                     <Text style={styles.buttomTitle} >Continuar</Text>
                 </TouchableOpacity>
                 <View>
