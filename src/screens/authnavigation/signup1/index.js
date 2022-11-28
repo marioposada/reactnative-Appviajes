@@ -1,13 +1,43 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import {styles } from './styles';
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView} from 'react-native';
 import Logo from '../../../../assets/Logo.png'
 import { useState } from 'react';
 import {CheckBox} from 'react-native-elements'
+
+//firebase
+import { auth } from '../../../utils/firebase-config';
+
 const SignUp1 = ({ navigation }) => {
 
     const [state, setState] = useState(false);
 
+    const [email, setEmail] = useState(" ");
+    const [password, setPassword] = useState(" ");
+
+    const dispatch = useDispatch();
+
+    const handleCreateAccount = () => {
+        auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Registered with: ', user.email);
+            dispatch({type: "OBTENER_ACCESO", payload: true});
+        }).catch(error => {alert(error.message); dispatch({type: "OBTENER_ACCESO", payload: false})});
+    }
+    // const handleCreateAccount = () => {
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //     .then(() => {
+    //         console.log("Account created!");
+    //         const user = userCredential.user;
+    //         console.log(user);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     })
+    // }
     return (
         <ScrollView style={{marginTop: 50}}>
             <KeyboardAvoidingView style={styles.container} >
@@ -23,6 +53,7 @@ const SignUp1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="ejemplo@gmail.com"
+                        onChangeText={(text) => {setEmail(text)}}
                     />
                 </View>
 
@@ -31,6 +62,7 @@ const SignUp1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="Enter your password"
+                        onChangeText={(text) => {setPassword(text)}}
                     />
                 </View>
 
@@ -47,7 +79,7 @@ const SignUp1 = ({ navigation }) => {
                     <Text>Acepto términos y condiciones</Text>
                 </View>
 
-                <TouchableOpacity style={styles.buttom}>
+                <TouchableOpacity style={styles.buttom} onPress={handleCreateAccount}>
                     <Text style={styles.buttomTitle}>Registrate</Text>
                 </TouchableOpacity>
                 <Text>¿Posees una cuenta?.Haz click <Text style={{fontWeight: 'bold'}} onPress={() => navigation.navigate('LogIn1')}>aquí</Text></Text>
