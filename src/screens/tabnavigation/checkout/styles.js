@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     height: 240,
   },
   button: {
-    width: 350,
+    width: 380,
     height: 50,
     backgroundColor: colors.primary,
     justifyContent: "center",
