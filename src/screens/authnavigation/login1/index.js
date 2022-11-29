@@ -23,7 +23,9 @@ const LogIn1 = ({ navigation }) => {
 
     function name() {
          console.log("el estado global es-->", estado);
-          dispatch({type: "OBTENER_ACCESO", payload: true});
+         navigation.navigate("Transition");
+        //   dispatch({type: "OBTENER_ACCESO", payload: true});
+          
          console.log("el estado global2 ahora es-->", estado);
     }
     const handleSignIn = () => {
@@ -32,7 +34,8 @@ const LogIn1 = ({ navigation }) => {
         .then(userCredentials => {
             const user = userCredentials.user;
             console.log('Logged in with: ', user.email);
-            dispatch({type: "OBTENER_ACCESO", payload: true});
+            navigation.navigate("Transition");
+            // dispatch({type: "OBTENER_ACCESO", payload: true});
         })
         .catch(error => {alert(error.message), dispatch({type: "OBTENER_ACCESO", payload: false})})
     }
