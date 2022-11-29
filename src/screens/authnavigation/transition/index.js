@@ -11,7 +11,7 @@ const Transition = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
             dispatch({type: "OBTENER_ACCESO", payload: true});
-        }, 20000)
+        }, 2000)
     }, [])
     return (
         <View style={[styles.container, StyleSheet.absoluteFillObject]}>
