@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
+import { useWindowDimensions } from "react-native";
 
 const To = ({ navigation, text }) => {
+  const { width, height } = useWindowDimensions();
   return (
-    <View style={styles.container}>
-      <View style={styles.content1}>
+    <View style={[styles.container, {width: width}]}>
+      <View style={[styles.content1, {width: width}]}>
         <Text style={styles.text}>Hasta</Text>
         <Image
           source={require("../../../../assets/lineconfirm1.png")}

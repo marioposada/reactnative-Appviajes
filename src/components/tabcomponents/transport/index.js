@@ -3,11 +3,12 @@ import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 import { useWindowDimensions } from "react-native";
 
-const Transport = ({ navigation, text }) => {
+const Transport = ({  text }) => {
   const { width, height } = useWindowDimensions();
 
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {width: width}] }>
       <View style={styles.content1}>
         <Text style={styles.text}>Transporte</Text>
         <Image
