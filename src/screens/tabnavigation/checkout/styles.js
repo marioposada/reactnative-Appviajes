@@ -18,6 +18,19 @@ export const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 250,
-   
+  },
+  button: {
+    width: 400,
+    height: 50,
+    backgroundColor: colors.primary,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginTop: 40,
+  },
+  text3: {
+    fontSize: 15,
+    color: colors.white,
+    fontWeight: "bold",
   },
 });

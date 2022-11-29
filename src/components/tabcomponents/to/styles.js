@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   text1: {
     width: 380,
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
     marginLeft: 10,
   },

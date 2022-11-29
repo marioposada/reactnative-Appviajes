@@ -14,7 +14,7 @@ const From = ({ navigation, text }) => {
       </View>
       <View style={styles.content2}>
         <Image source={require("../../../../assets/location.png")} />
-        <Text style={styles.text1}>{text}</Text>
+        <Text style={styles.text1}>{text[0]}</Text>
       </View>
     </View>
   );

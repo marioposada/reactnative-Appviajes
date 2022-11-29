@@ -15,26 +15,36 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   content2: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "center",
+    width: 385,
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: colors.white,
-    marginVertical: 10,
+    flexDirection: "row",
+    marginTop: 20,
+    marginHorizontal: 20,
   },
-
+  content3: {
+    width: 385,
+    alignItems: "center",
+    justifyContent: "flex-end",
+    backgroundColor: colors.white,
+    flexDirection: "row",
+    marginTop: 25,
+  },
   image: {
     width: 340,
   },
   text: {
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
-    marginRight: 10,
   },
   text1: {
-    width: 380,
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
-    marginLeft: 10,
+  },
+  text2: {
+    fontSize: 18,
+    color: colors.black,
+    fontWeight: "bold",
   },
 });
