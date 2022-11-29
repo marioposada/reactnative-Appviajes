@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
+
   },
   content1: {
     width: "100%",
@@ -15,24 +16,27 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
   },
   content2: {
-    width: 385,
+    width: "100%",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: colors.white,
     flexDirection: "row",
-    marginTop: 20,
-    marginHorizontal: 20,
+    marginTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   content3: {
-    width: 385,
+    width: "100%",
     alignItems: "center",
     justifyContent: "flex-end",
     backgroundColor: colors.white,
     flexDirection: "row",
-    marginTop: 25,
+    marginTop: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   image: {
-    width: 340,
+    width: 300,
   },
   text: {
     fontSize: 15,

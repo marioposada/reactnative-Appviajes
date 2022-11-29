@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   content1: {
-    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
@@ -17,14 +16,10 @@ export const styles = StyleSheet.create({
   content2: {
     width: "100%",
     flexDirection: "row",
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
-    marginVertical: 30,
-  },
-
-  image: {
-    width: 365,
+    marginVertical: 10,
+    paddingLeft: 10,
   },
   text: {
     fontSize: 12,
@@ -32,9 +27,11 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   text1: {
-    width: 380,
     fontSize: 15,
     color: colors.black,
     marginLeft: 10,
   },
+  image: {
+    width: 300,
+  }
 });

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { From, To, Transport } from "../../../components";
 import { styles } from "./styles";
+import { useWindowDimensions } from "react-native";
 
 const text = [
   "Barrio Santa Bárbara, Las Torcazas, 1618, General Pacheco, Buenos Aires",
@@ -16,13 +17,16 @@ const text = [
 ];
 
 const CheckoutScreen = ({ navigation }) => {
+
+  const { width, height } = useWindowDimensions();
+ 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {width: width}]}>
       <Image
         source={require("../../../../assets/mapconfirm.png")}
         style={styles.image}
       />
-      <View style={styles.content}>
+      <View style={[styles.content,{width: width }]}>
         <From text={text} />
         <To text={text} />
         <Transport text={text} />
