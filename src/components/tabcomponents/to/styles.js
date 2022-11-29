@@ -16,15 +16,11 @@ export const styles = StyleSheet.create({
   },
   content2: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "center",
     alignItems: "center",
+    flexDirection: "row",
     backgroundColor: colors.white,
     marginVertical: 10,
-  },
-
-  image: {
-    width: 365,
+    paddingLeft: 10,
   },
   text: {
     fontSize: 12,
@@ -32,11 +28,11 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   text1: {
-    width: 380,
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
     marginLeft: 10,
   },
+  image: {
+    width: 300,
+  }
 });
-
-

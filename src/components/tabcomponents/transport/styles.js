@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
+
   },
   content1: {
     width: "100%",
@@ -16,25 +17,38 @@ export const styles = StyleSheet.create({
   },
   content2: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: colors.white,
-    marginVertical: 10,
+    flexDirection: "row",
+    marginTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
-
+  content3: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    backgroundColor: colors.white,
+    flexDirection: "row",
+    marginTop: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
   image: {
-    width: 340,
+    width: 300,
   },
   text: {
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
-    marginRight: 10,
   },
   text1: {
-    width: 380,
-    fontSize: 12,
+    fontSize: 15,
     color: colors.black,
-    marginLeft: 10,
+  },
+  text2: {
+    fontSize: 18,
+    color: colors.black,
+    fontWeight: "bold",
   },
 });
