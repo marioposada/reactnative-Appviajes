@@ -19,7 +19,7 @@ const TabNavigator = () => {
     >
       <BottomTab.Screen
         name="HomeTab"
-        component={MapScreen}
+        component={HomeNavigator}
         options={{
           title: "Home",
           tabBarIcon: ({ focused }) => (
