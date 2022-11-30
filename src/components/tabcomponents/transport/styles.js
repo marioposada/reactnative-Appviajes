@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     backgroundColor: colors.white,
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
   },

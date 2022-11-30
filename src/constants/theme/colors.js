@@ -7,6 +7,7 @@ export const colors = {
     black: '#3a3a3a',
     white: '#fff',
     background: '#D9D9D9',
+    background_light: '#F5BBB1',
     grey_placeholder: '#E5E5E5',
     gray_background_social: '#E5E5E5',
     grey_background: '#f9f9f9',
