@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     alignItems: "center",
-    marginTop: 22,
+    marginTop: 70,
   },
   textCancelar: {
     fontSize: 15,
