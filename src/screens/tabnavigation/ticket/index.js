@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, ImageBackground, Image } from "react-native";
+import { View, Text, ImageBackground, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import QRCode from "react-qr-code";
 
 const TicketScreen = ({ navigation }) => {
   return (
@@ -45,6 +46,22 @@ const TicketScreen = ({ navigation }) => {
         </View>
         <Text style={styles.textprice}>$25,50</Text>
       </ImageBackground>
+      <View style={styles.content5}>
+        <QRCode
+        bgColor="#FFFFFF"
+          size={236}
+          value='https://www.google.com'
+          viewBox={`0 0 256 256`}
+        />
+      </View>
+      <TouchableOpacity>
+      <Image source={require("../../../../assets/download.png")}  />
+      </TouchableOpacity>
+      <TouchableOpacity
+      style={styles.button}
+      >
+      <Text style={styles.textdownload}>Volver</Text>
+      </TouchableOpacity>
     </View>
   );
 };

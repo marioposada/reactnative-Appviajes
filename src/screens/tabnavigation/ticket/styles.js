@@ -58,8 +58,12 @@ export const styles = StyleSheet.create({
   content4: {
     flexDirection: "row",
     alignItems: "center",
-
     paddingLeft: 60,
+  },
+  content5: {
+    marginTop: 30,
+    paddingLeft: 20,
+    backgroundColor: colors.white,
   },
   textbus: {
     fontSize: 15,
@@ -71,7 +75,17 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: colors.input_background,
-    textAlign: 'center',
+    textAlign: "center",
     paddingTop: 10,
+  },
+  button: {
+    width: 350,
+    backgroundColor: colors.primary,
+    height: 45,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 20,
+    borderRadius: 5,
+
   }
 });
