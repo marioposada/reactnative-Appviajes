@@ -16,7 +16,7 @@ const text = [
   "$25,50",
 ];
 
-const CheckoutScreen = () => {
+const CheckoutScreen = ({navigation}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [modal2, setModal2] = useState(false);
 
@@ -88,7 +88,7 @@ const CheckoutScreen = () => {
           <View style={styles.presables}>
             <TouchableOpacity
               style={styles.buttonAceptar2}
-              onPress={() => setModal2(!modal2)}
+              onPress={() => navigation.navigate("Ticket")}   
             >
               <Text style={styles.textStyleTicket}>Ver Ticket</Text>
             </TouchableOpacity>
