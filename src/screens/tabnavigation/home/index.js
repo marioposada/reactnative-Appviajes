@@ -122,7 +122,7 @@ const HomeScreen = ({navigation}) => {
             </View>
 
 
-            <ScrollView style={{top: 220}}>
+            <View style={{top: 220}}>
                 {/* <ScrollView > */}
                 {/* <FlatList>
                     <View style={styles.favorites}>
@@ -169,7 +169,7 @@ const HomeScreen = ({navigation}) => {
                 <View style={{height: 210}}>
                 </View> 
                 {/* </ScrollView> */}
-            </ScrollView>
+            </View>
             
             
         </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {styles } from './styles';
-import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView} from 'react-native';
+import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView, Alert} from 'react-native';
 import Logo from '../../../../assets/Logo.png'
 import { useState } from 'react';
 import {CheckBox} from 'react-native-elements'
@@ -15,29 +15,22 @@ const SignUp1 = ({ navigation }) => {
 
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
-
+    const [repeatPassword, setRepeatPassword] = useState(" ");
     const dispatch = useDispatch();
 
     const handleCreateAccount = () => {
-        auth
-        .createUserWithEmailAndPassword(email, password)
-        .then(userCredentials => {
-            const user = userCredentials.user;
-            console.log('Registered with: ', user.email);
-            dispatch({type: "OBTENER_ACCESO", payload: true});
-        }).catch(error => {alert(error.message); dispatch({type: "OBTENER_ACCESO", payload: false})});
+        if(password === repeatPassword) {
+            auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+                console.log('Registered with: ', user.email);
+                dispatch({type: "OBTENER_ACCESO", payload: true});
+            }).catch(error => {alert(error.message); dispatch({type: "OBTENER_ACCESO", payload: false})});    
+        } else {
+            alert(`CONTRASEÑAS NO REPETIDAS`)
+        }
     }
-    // const handleCreateAccount = () => {
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //     .then(() => {
-    //         console.log("Account created!");
-    //         const user = userCredential.user;
-    //         console.log(user);
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //     })
-    // }
     return (
         <ScrollView style={{marginTop: 50}}>
             <KeyboardAvoidingView style={styles.container} >
@@ -71,6 +64,7 @@ const SignUp1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="Enter your password"
+                        onChangeText={(text) => {setRepeatPassword(text)}}
                     />
                 </View>
 
@@ -79,7 +73,7 @@ const SignUp1 = ({ navigation }) => {
                     <Text>Acepto términos y condiciones</Text>
                 </View>
 
-                <TouchableOpacity style={styles.buttom} onPress={handleCreateAccount}>
+                <TouchableOpacity style={!state ? styles.buttomOf : styles.buttom} onPress={handleCreateAccount} disabled={state ? false : true}>
                     <Text style={styles.buttomTitle}>Registrate</Text>
                 </TouchableOpacity>
                 <Text>¿Posees una cuenta?.Haz click <Text style={{fontWeight: 'bold'}} onPress={() => navigation.navigate('LogIn1')}>aquí</Text></Text>
