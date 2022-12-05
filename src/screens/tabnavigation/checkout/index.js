@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  Modal,
-  Pressable,
-} from "react-native";
+import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
 import { From, To, Transport } from "../../../components";
 import { styles } from "./styles";
 import { useWindowDimensions } from "react-native";
@@ -23,14 +16,14 @@ const text = [
   "$25,50",
 ];
 
-const CheckoutScreen = ({ navigation }) => {
+const CheckoutScreen = ({navigation}) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
+  const [modal2, setModal2] = useState(false);
 
   const { width, height } = useWindowDimensions();
 
   return (
-    <View style={[styles.container, { width: width , height: height}]}>
+    <View style={[styles.container, { width: width, height: height }]}>
       <Image
         source={require("../../../../assets/mapconfirm.png")}
         style={styles.image}
@@ -40,20 +33,13 @@ const CheckoutScreen = ({ navigation }) => {
         <To text={text} />
         <Transport text={text} />
         <TouchableOpacity
-          onPress={() => setIsVisible(true)}
+          onPress={() => setIsVisible(!isVisible)}
           style={styles.button}
         >
           <Text style={styles.text3}>Comprar ahora</Text>
         </TouchableOpacity>
       </View>
-      <Modal
-        animationType="slide"
-        visible={isVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setIsVisible(!isVisible);
-        }}
-      >
+      <Modal animationType="slide" visible={isVisible}>
         <View style={styles.centeredView}>
           <Text style={styles.modalText}>Metodo de pago</Text>
           <View style={styles.card}>
@@ -69,39 +55,43 @@ const CheckoutScreen = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.presables}>
-            <Pressable
+            <TouchableOpacity
               style={styles.buttonAceptar}
-              onPress={() => setIsVisible2(!isVisible2)}
-            >
+              onPress={() => setModal2(!modal2)}>
               <Text style={styles.textStyle}>Aceptar</Text>
-            </Pressable>
-            <Pressable
+            </TouchableOpacity>
+            <TouchableOpacity
               style={styles.buttonCancelar}
               onPress={() => setIsVisible(!isVisible)}
             >
               <Text style={styles.textCancelar}>Cancelar</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
-      <Modal animationType="slide" visible={isVisible2}>
+      <Modal animationType="slide" visible={modal2}>
         <View style={styles.centeredView}>
           <Image source={require("../../../../assets/check.png")} />
           <View style={styles.card1}>
             <Text style={styles.textSuccess1}>¡Compra realizada!</Text>
-            <Text style={styles.textSuccess2}>A continuación tendrás el ticket a </Text>
-            <Text style={styles.textSuccess3}>disposición con le código QR.</Text>
-            <Text style={styles.textSuccess4}>Transacción número 8726877238</Text>
+            <Text style={styles.textSuccess2}>
+              A continuación tendrás el ticket a{" "}
+            </Text>
+            <Text style={styles.textSuccess3}>
+              disposición con le código QR.
+            </Text>
+            <Text style={styles.textSuccess4}>
+              Transacción número 8726877238
+            </Text>
             <Text style={styles.textSuccess5}>Muchas gracias!</Text>
-
           </View>
           <View style={styles.presables}>
-            <Pressable
+            <TouchableOpacity
               style={styles.buttonAceptar2}
-              onPress={() => setIsVisible2(!isVisible)}
+              onPress={() => navigation.navigate("Ticket")}   
             >
               <Text style={styles.textStyleTicket}>Ver Ticket</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
