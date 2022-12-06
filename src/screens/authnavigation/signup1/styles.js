@@ -46,6 +46,15 @@ export const styles =  StyleSheet.create({
         marginBottom: 20,
         borderRadius: 5,
     },
+    buttomOf: {
+        width: 300,
+        backgroundColor: "black",
+        height: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20,
+        borderRadius: 5,
+    },
     buttomTitle: {
         color: 'white',
         fontWeight: 'bold',
