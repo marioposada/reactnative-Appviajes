@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import {styles } from './styles';
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView, Alert} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import Logo from '../../../../assets/Logo.png'
 import { useState } from 'react';
 import {CheckBox} from 'react-native-elements'
@@ -18,6 +19,8 @@ const SignUp1 = ({ navigation }) => {
     const [repeatPassword, setRepeatPassword] = useState(" ");
     const dispatch = useDispatch();
 
+    const insets = useSafeAreaInsets();
+
     const handleCreateAccount = () => {
         if(password === repeatPassword) {
             auth
@@ -32,7 +35,7 @@ const SignUp1 = ({ navigation }) => {
         }
     }
     return (
-        <ScrollView style={{marginTop: 50}}>
+        <ScrollView style={{marginTop: insets.top}}>
             <KeyboardAvoidingView style={styles.container} >
 
                 <View onPress={() => navigation.navigate("OnBoarding1")}>

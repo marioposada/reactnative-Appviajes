@@ -14,7 +14,7 @@ export const styles =  StyleSheet.create({
 
     },
     title: {
-        color: colors.primary_mayor,
+        color: colors.primary,
         fontSize: 60,
         fontWeight: "bold",
         marginBottom: 20,

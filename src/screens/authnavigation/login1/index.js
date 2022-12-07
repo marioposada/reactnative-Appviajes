@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { styles } from './styles';
 import { View, Text, Image, TouchableOpacity, Input, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context'
+
 import { colors } from '../../../constants/theme/index';
 import Logo from '../../../../assets/Logo.png'
 import Line from '../../../../assets/Line.png'
@@ -20,6 +22,8 @@ const LogIn1 = ({ navigation }) => {
     const estado = useSelector(state => state.stateGlobal);
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
+
+    const insets = useSafeAreaInsets();
 
     function name() {
          console.log("el estado global es-->", estado);
@@ -48,7 +52,7 @@ const LogIn1 = ({ navigation }) => {
     //     }).catch(error => alert(error.message));
     // }
     return (
-        <ScrollView style={{marginTop: 70}}>
+        <ScrollView style={{marginTop: insets.top}}>
             <KeyboardAvoidingView style={styles.container} > 
                 {/* <Input placeholder="Email" /> */}
                 <View onPress={() => navigation.navigate("OnBoarding1")}>
