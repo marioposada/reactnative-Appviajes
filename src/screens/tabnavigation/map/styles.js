@@ -33,4 +33,16 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginTop: 40,
   },
+  contentCard: {
+    height: 100,
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 10,
+  },
+  contentIcon: {
+    justifyContent: "center",
+  },
+  contentText: {
+    marginHorizontal: 10,
+  },
 });

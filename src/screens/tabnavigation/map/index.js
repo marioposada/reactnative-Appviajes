@@ -4,6 +4,7 @@ import * as React from "react";
 import { From, To, Transport } from "../../../components";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import { Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
 
 import FlagFinish from "../../../../assets/finish-flag.png";
 import FlagInit from "../../../../assets/init-flag.png";
@@ -14,37 +15,52 @@ import { useWindowDimensions } from "react-native";
 
 const MapScreen = ({ navigation }) => {
   const { width, height } = useWindowDimensions();
-
-  const [origin, setOrigin] = React.useState({
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
+  const [origin, setOrigin] = useState({
     latitude: -31.417,
     longitude: -64.183,
   });
 
-  const [destination, setDestination] = React.useState({
+  const [destination, setDestination] = useState({
     latitude: -31.3,
     longitude: -64.3,
   });
 
-  React.useEffect(() => {
-    getLocation;
+  useEffect(() => {
+    getLocation();
   }, []);
 
   async function getLocation() {
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
-      alert("Permission denied");
-      return;
+      setErrorMsg("Permission to access location was denied");
     }
-    let location = await Location.getCurrentPositionAsync({});
-    const current = {
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude,
-    };
-    setOrigin(current);
+    Location.setGoogleApiKey(GOOGLE_MAPS_APIKEY);
+
+    console.log(status);
+
+    let { coords } = await Location.getCurrentPositionAsync();
+
+    setLocation(coords);
+
+    console.log(coords);
+
+    if (coords) {
+      let { longitude, latitude } = coords;
+
+      let regionName = await Location.reverseGeocodeAsync({
+        longitude,
+        latitude,
+      });
+      setAddress(regionName[0]);
+      console.log(address);
+    }
   }
 
   const handlePurchase = () => {
-    console.warn(origin.formatted_address);
+    console.warn(location);
   };
 
   return (
@@ -86,7 +102,7 @@ const MapScreen = ({ navigation }) => {
         /> */}
       </MapView>
       <View style={[styles.content, { width: width }]}>
-        <From text={origin} />
+        <From text={(address.street, address.streetNumber)} />
         <To text={destination} />
       </View>
       <TouchableOpacity style={styles.buttom} onPress={handlePurchase}>
