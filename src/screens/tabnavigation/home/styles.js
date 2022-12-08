@@ -19,23 +19,23 @@ export const styles = StyleSheet.create({
         left: 20,
     },
     geolocation: {
-        backgroundColor: colors.secondary_mayor,
+        backgroundColor: colors.primary_light,
         padding: 20,
         borderRadius: 15,
         height: 100,
         position: 'relative',
-        top: 180,
+        top: 210,
         flexDirection: 'row',
        
     },
     geolocationTitle: {
-        color: colors.transparent,
+        color: "#4F4F4F",
         // paddingVertical: 5,
     },
     favorites: {
         width: 340,
         padding: 20,
-        backgroundColor: colors.transparentPink,
+        backgroundColor: colors.secondary,
         height: 100,
     },
     favoritesTop: {

@@ -94,7 +94,7 @@ const HomeScreen = ({navigation}) => {
     }, [])
     return (
 
-        <View style={styles.container}>
+        <View style={[styles.container]}>
             <ImageBackground source={FondoPantalla4} style={{ height: 220, borderWidth: 3, position:"absolute", top: 0, width: width}}>
                 <View style={{backgroundColor: 'white',opacity: .25, height: 22, width: width}}></View>
                 <View>
@@ -166,7 +166,7 @@ const HomeScreen = ({navigation}) => {
                     <Text style={{ fontWeight: 'bold'}}>Añadir nuevo Favorito</Text>
                 </TouchableOpacity>
                 
-                <View style={{height: 210}}>
+                <View style={{height: 270}}>
                 </View> 
                 {/* </ScrollView> */}
             </View>
