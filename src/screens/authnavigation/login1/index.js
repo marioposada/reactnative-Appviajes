@@ -43,17 +43,10 @@ const LogIn1 = ({ navigation }) => {
         })
         .catch(error => {alert(error.message), dispatch({type: "OBTENER_ACCESO", payload: false})})
     }
-    // const handleSignIn = () => {
-    //     auth
-    //     .createUserWithEmailAndPassword(email, password)
-    //     .then(userCredentials => {
-    //         const user = userCredentials.user;
-    //         console.log(user.email);
-    //     }).catch(error => alert(error.message));
-    // }
     return (
         <ScrollView style={{marginTop: insets.top}}>
-            <KeyboardAvoidingView style={styles.container} > 
+            {/* <KeyboardAvoidingView style={[styles.container, {paddingTop: 30}]} >  */}
+            <KeyboardAvoidingView style={[styles.container]} > 
                 {/* <Input placeholder="Email" /> */}
                 <View onPress={() => navigation.navigate("OnBoarding1")}>
                     <Image source={Logo} style={{width: 135.46, height: 157.2}} />
@@ -79,8 +72,7 @@ const LogIn1 = ({ navigation }) => {
                     />
                 </View>
                 <View style={{width: 280}}><Text style={styles.unknownPassword}>¿Olvidaste tu contraseña?</Text></View>
-                {/* <TouchableOpacity style={styles.buttom}  onPress={handleSignIn}> */}
-                <TouchableOpacity style={styles.buttom}  onPress={name}>
+                <TouchableOpacity style={styles.buttom}  onPress={handleSignIn}>
                     <Text style={styles.buttomTitle} >Continuar</Text>
                 </TouchableOpacity>
                 <View>
