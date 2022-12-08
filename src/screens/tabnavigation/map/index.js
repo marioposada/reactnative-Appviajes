@@ -18,6 +18,7 @@ const MapScreen = ({ navigation }) => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
+
   const [origin, setOrigin] = useState({
     latitude: -31.417,
     longitude: -64.183,
