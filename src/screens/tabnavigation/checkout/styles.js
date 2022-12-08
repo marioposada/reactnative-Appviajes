@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginVertical: 5,
   },
+  modal: {
+    backgroundColor: colors.danger,
+  },
 
   image: {
     width: "100%",
@@ -40,14 +43,13 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   buttonAceptar2: {
-    width: '100%',
+    width: "100%",
     height: 50,
     backgroundColor: colors.primary,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 5,
     marginTop: 10,
-
   },
   buttonCancelar: {
     width: 190,
@@ -68,7 +70,13 @@ export const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     alignItems: "center",
-    marginTop: 70,
+    marginTop: 430,
+  },
+  centeredView1: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: 330,
+    backgroundColor: colors.background,
   },
   textCancelar: {
     fontSize: 15,
@@ -78,23 +86,20 @@ export const styles = StyleSheet.create({
 
   modalText: {
     width: "100%",
-    marginBottom: 15,
     textAlign: "center",
     paddingTop: 15,
     fontSize: 20,
     height: 60,
-    backgroundColor: colors.background_light,
+    backgroundColor: colors.primary_light,
     color: colors.black,
   },
   card: {
     width: "100%",
     height: 150,
-    backgroundColor: colors.white,
+    backgroundColor: colors.background,
     justifyContent: "center",
     borderRadius: 5,
-    marginTop: 10,
-    borderWidth: 0.8,
-    borderColor: colors.grey_placeholder  },
+  },
   text: {
     fontSize: 14,
     color: colors.black,
@@ -123,58 +128,50 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.white,
-    marginVertical: 10,
+    backgroundColor: colors.background,
   },
-  textSuccess1:{
+  textSuccess1: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.black,
     fontWeight: "regular",
     marginVertical: 3,
     marginBottom: 30,
-
   },
-  textSuccess2:{
+  textSuccess2: {
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.black,
     fontWeight: "regular",
     marginVertical: 3,
-
   },
-  textSuccess3:{
+  textSuccess3: {
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.black,
     fontWeight: "regular",
     marginVertical: 3,
     marginBottom: 30,
-
   },
-  textSuccess4:{
+  textSuccess4: {
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.black,
     fontWeight: "bold",
     marginVertical: 3,
     marginBottom: 30,
-
   },
-  textSuccess5:{
+  textSuccess5: {
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: "center",
     color: colors.black,
     fontWeight: "regular",
     marginVertical: 3,
-
   },
   textStyleTicket: {
     fontSize: 15,
     color: colors.white,
     fontWeight: "bold",
     textAlign: "center",
-
-  }
-
+  },
 });

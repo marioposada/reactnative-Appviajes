@@ -39,7 +39,9 @@ const CheckoutScreen = ({navigation}) => {
           <Text style={styles.text3}>Comprar ahora</Text>
         </TouchableOpacity>
       </View>
-      <Modal animationType="slide" visible={isVisible}>
+      <Modal 
+         transparent={true}
+      animationType="slide" visible={isVisible}>
         <View style={styles.centeredView}>
           <Text style={styles.modalText}>Metodo de pago</Text>
           <View style={styles.card}>
@@ -69,8 +71,10 @@ const CheckoutScreen = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      <Modal animationType="slide" visible={modal2}>
-        <View style={styles.centeredView}>
+      <Modal 
+       transparent={true}
+      animationType="slide" visible={modal2}>
+        <View style={styles.centeredView1}>
           <Image source={require("../../../../assets/check.png")} />
           <View style={styles.card1}>
             <Text style={styles.textSuccess1}>¡Compra realizada!</Text>

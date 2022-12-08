@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: colors.white,
-    marginTop: 50,
   },
   map: {
     width: "100%",
@@ -31,7 +30,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.white,
-    marginTop: 40,
+    marginTop: 15,
   },
   contentCard: {
     height: 100,
