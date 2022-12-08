@@ -74,6 +74,7 @@ const LogIn1 = ({ navigation }) => {
                     <TextInput
                         style={styles.input} 
                         placeholder="Enter your password"
+                        secureTextEntry={true}
                         onChangeText={(text) => setPassword(text)}
                     />
                 </View>

@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, ImageBackground, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { styles } from "./styles";
 import QRCode from "react-qr-code";
 
@@ -48,19 +54,20 @@ const TicketScreen = ({ navigation }) => {
       </ImageBackground>
       <View style={styles.content5}>
         <QRCode
-        bgColor="#FFFFFF"
+          bgColor="#FFFFFF"
           size={236}
-          value='https://www.google.com'
+          value="https://www.google.com"
           viewBox={`0 0 256 256`}
         />
       </View>
       <TouchableOpacity>
-      <Image source={require("../../../../assets/download.png")}  />
+        <Image source={require("../../../../assets/download.png")} />
       </TouchableOpacity>
       <TouchableOpacity
-      style={styles.button}
+        onPress={() => navigation.navigate("Home")}
+        style={styles.button}
       >
-      <Text style={styles.textdownload}>Volver</Text>
+        <Text style={styles.textdownload}>Volver</Text>
       </TouchableOpacity>
     </View>
   );

@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 // import store from "./src/redux/store";
 import configureStore from "./src/redux/store";
 //Para el drawer navigator
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 
 export default function App() {
 

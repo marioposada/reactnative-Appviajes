@@ -13,6 +13,18 @@ import MapViewDirections from "react-native-maps-directions";
 import { styles } from "./styles";
 import { useWindowDimensions } from "react-native";
 
+const text = [
+  "Barrio Santa Bárbara, Las Torcazas, 1618, General Pacheco, Buenos Aires",
+  "Avenida 9 de Julio, Buenos Aires, Argentina",
+  "Línea 505 - Interno 34",
+  "1h 30m",
+  "Horario y fecha de partida",
+  "Ahora",
+  "Cantidad de tickets",
+  "1",
+  "$25,50",
+];
+
 const MapScreen = ({ navigation }) => {
   const { width, height } = useWindowDimensions();
   const [errorMsg, setErrorMsg] = useState(null);
@@ -61,7 +73,7 @@ const MapScreen = ({ navigation }) => {
   }
 
   const handlePurchase = () => {
-    console.warn(location);
+    navigation.navigate("Confirmacion");
   };
 
   return (
@@ -103,8 +115,8 @@ const MapScreen = ({ navigation }) => {
         /> */}
       </MapView>
       <View style={[styles.content, { width: width }]}>
-        <From text={(address.street, address.streetNumber)} />
-        <To text={destination} />
+       <From text={text} />
+        <To text={text} />
       </View>
       <TouchableOpacity style={styles.buttom} onPress={handlePurchase}>
         <Text style={styles.buttomTitle}>Aceptar</Text>
