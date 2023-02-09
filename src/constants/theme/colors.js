@@ -9,7 +9,7 @@ export const colors = {
     input_background: '#D9D9D9',
     grey_placeholder: '#E5E5E5',
     grey_line: '#B4B4B4',
-    lightGrey: '#F9F9F9',
+    lightGrey: '#F9F9F8',
     danger: '#BD0B0B',
     transparent: 'transparent',
     text_grey: '#D9D9D9',
